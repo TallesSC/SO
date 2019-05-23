@@ -1,0 +1,1 @@
+A conexão entre a linguagem que nós pensamos\programamos e os problemas e soluções que possamos imaginar é muito forte. Por essa razão, restringir recursos da linguagem com a intenção de eliminar erros do programador é, na melhor das hipóteses, muito perigoso.

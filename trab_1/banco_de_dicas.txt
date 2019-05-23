@@ -1,0 +1,10 @@
+Gosto do meu código elegante e eficiente. A lógica deve ser direta para dificultar o encobrimento de bugs, as dependências mínimas para facilitar a manutenção, o tratamento de erro completo de acordo com uma estratégia clara e o desempenho próximo do mais eficiente de modo a não incitar as pessoas a tornarem o código confuso com otimizações sorrateiras. O código limpo faz vem apenas uma coisa.
+Um código limpo é simples e direto. Ele é tão bem legível quanto uma prosa bem escrita. Ele jamais torna confuso o objetivo de desenvolvedor, em vez disso, ele está repleto de abstrações claras e linhas de controle objetivas.
+Veja o quadro geral - Não fique tão focado só nos detalhes que esqueça de verificar o que está acontecendo ao se redor.
+Faça da Qualidade um requisito - Envolva os usuários para determinar a real qualidade que o projeto precisa ter e cumpra.
+Analise criticamente o que você lê ou escuta - Não seja influenciado pelo hype das coisas. Analise a informação em termos de você e seu projeto.
+Einstein argumentou que deve haver explicações simplificadas da natureza, porque Deus não é caprichoso ou arbitrário. Nenhuma dessas crenças conforta o engenheiro de software.
+Ajustar-se ao requisito de perfeição é, penso eu, a parte mais difícil de aprender a programar.
+Bons programadores sabem o que escrever. Os melhores sabem o que reescrever.
+A conexão entre a linguagem que nós pensamos\programamos e os problemas e soluções que possamos imaginar é muito forte. Por essa razão, restringir recursos da linguagem com a intenção de eliminar erros do programador é, na melhor das hipóteses, muito perigoso.
+Quando você tem um bom script você está quase com mais problemas do que você teria se tivesse um péssimo script.
