@@ -130,7 +130,7 @@ void* threadStart (void* arg) {
 }
 
 int main(void){
-	clock_t inicio = clock();
+
 	srand(time(NULL));
 
 	// Define número de threads de acordo com o usuário
@@ -142,6 +142,9 @@ int main(void){
 	char palavra[TAMANHO_MAX];
 	printf(COLOR_B_GREEN "Qual palavra deseja procurar? (Ex: Apple)\n\t" COLOR_RESET);
 	scanf("%s", palavra);
+	
+	// inicio do temporizador
+	clock_t inicio = clock();
 	
 	// Cria vetor de threads e vetor de argumentos (usado para definir um índice para cada thread)
 	pthread_t* threadArray = (pthread_t*) malloc(nThreads * sizeof(pthread_t));
@@ -161,10 +164,9 @@ int main(void){
 	// Limpeza da bibioteca curl
 	curl_global_cleanup();
 	
-	
 	// mostra tempo decorrido no programa
 	clock_t fim = clock();
-	float tempo = ((fim - inicio) * 1000) / CLOCKS_PER_SEC;
+	double tempo = ((double) (fim - inicio)) / CLOCKS_PER_SEC;
 	printf("Fim de jogo! Tempo decorrido: %f", tempo);
 	
 	return 0;
