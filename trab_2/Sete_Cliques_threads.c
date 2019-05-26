@@ -13,6 +13,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <pthread.h>
+#include <time.h>
 
 #define MAX_CLIQUES 7
 #define TAMANHO_MAX 256 
@@ -121,7 +122,7 @@ void* threadStart (void* arg) {
 	int id = input->id;
 	char* paginaInicial = input->paginaInicial;
 	char* palavraProcurada = input->palavraProcurada;
-
+	
 	// Função recursiva principal do jogo
 	seteCliques(paginaInicial, palavraProcurada, MAX_CLIQUES, id);
 	
@@ -129,6 +130,7 @@ void* threadStart (void* arg) {
 }
 
 int main(void){
+	clock_t inicio = clock();
 	srand(time(NULL));
 
 	// Define número de threads de acordo com o usuário
@@ -158,6 +160,12 @@ int main(void){
 	
 	// Limpeza da bibioteca curl
 	curl_global_cleanup();
+	
+	
+	// mostra tempo decorrido no programa
+	clock_t fim = clock();
+	float tempo = ((fim - inicio) * 1000) / CLOCKS_PER_SEC;
+	printf("Fim de jogo! Tempo decorrido: %f", tempo);
 	
 	return 0;
 }
