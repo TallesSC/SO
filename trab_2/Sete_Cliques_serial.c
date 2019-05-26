@@ -64,6 +64,8 @@ bool paginaInvalida(char* url){
 		return true;
 	}else if (strstr(url, ".jpeg") != NULL){
 		return true;
+	}else if(strstr(url, "Carregar_ficheiro") != NULL){
+		return true;
 	}
 	return false;
 }
