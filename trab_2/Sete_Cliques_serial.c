@@ -106,25 +106,27 @@ bool seteCliques(char* url, char* palavraProcurada, int cliquesRestantes){
 }
 
 int main(void){
-	clock_t inicio = clock();
+
 	srand(time(NULL));
 
 	// Define a palavra a ser procurada
 	char palavraProcurada[TAMANHO_MAX];
 	printf(COLOR_B_GREEN "Qual palavra deseja procurar? (Ex: Apple)\n\t" COLOR_RESET);
 	scanf("%s", palavraProcurada);
-
+	clock_t inicio = clock();
+	
 	bool ganhou;
-	do{
+	// descomentar para fazer o jogo jogar infinitamente até ganhar
+	//do{
 		printf(COLOR_MAGENTA "Começando um novo jogo com a palavra %s\n" COLOR_RESET, palavraProcurada);
 		ganhou = seteCliques("https://pt.wikipedia.org/wiki/Sistema_operativo", palavraProcurada, MAX_CLIQUES);
-	}while(!ganhou);
+	//}while(!ganhou);
 
 	curl_global_cleanup();
 	
 	// mostra tempo decorrido no programa
 	clock_t fim = clock();
-	float tempo = ((fim - inicio) * 1000) / CLOCKS_PER_SEC;
+	double tempo = ((double) (fim - inicio)) / CLOCKS_PER_SEC;
 	printf("Fim de jogo! Tempo decorrido: %f", tempo);
 	
 	return 0;
