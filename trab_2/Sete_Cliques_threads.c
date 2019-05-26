@@ -167,7 +167,7 @@ int main(void){
 	// mostra tempo decorrido no programa
 	clock_t fim = clock();
 	double tempo = ((double) (fim - inicio)) / CLOCKS_PER_SEC;
-	printf("Fim de jogo! Tempo decorrido: %f", tempo);
+	printf("Fim de jogo! Tempo decorrido: %f\n", tempo);
 	
 	return 0;
 }
