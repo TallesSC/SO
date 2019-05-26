@@ -106,7 +106,7 @@ bool seteCliques(char* url, char* palavraProcurada, int cliquesRestantes){
 }
 
 int main(void){
-
+	clock_t inicio = clock();
 	srand(time(NULL));
 
 	// Define a palavra a ser procurada
@@ -121,6 +121,11 @@ int main(void){
 	}while(!ganhou);
 
 	curl_global_cleanup();
+	
+	// mostra tempo decorrido no programa
+	clock_t fim = clock();
+	float tempo = ((fim - inicio) * 1000) / CLOCKS_PER_SEC;
+	printf("Fim de jogo! Tempo decorrido: %f", tempo);
 	
 	return 0;
 }
