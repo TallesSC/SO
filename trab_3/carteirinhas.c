@@ -57,13 +57,11 @@ void* bolsista (void* arg) {
         saiBolsista(); // Bolsista sai e número de pessoa dentro do DCE zera
         contadorFichas = 0;
 
-        sem_wait(&sem_mutex);
         for (int i = 0; i < numFichas; i++){
             if (arrayContainValue(thread_args[i].id,fichasDentro))  // verifica se não é uma das fichas já liberadas
                 continue;
             sem_post(&(thread_args[i].sem_ficha));   // libera próximas fichas para entrarem
         }        
-        sem_post(&sem_mutex);
         sleep(3);
     }
     

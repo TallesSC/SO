@@ -20,7 +20,7 @@ void entraBolsista(){
 
 // bolsista termina o trabalho e sai do DCE
 void saiBolsista(){
-    sleep(SLEEP_TIME);
+    sleep(SLEEP_TIME + 2);
     printf(COLOR_B_RED "Bolsista: " COLOR_MAGENTA "Terminei. Fechei a porta. Vou tomar um cafézinho e já volto...\n");
 }
 
@@ -28,26 +28,26 @@ void saiBolsista(){
 // verifica os documentos da ficha recebida
 void verificaDocumentos(int ficha){
     sleep(SLEEP_TIME);
-    printf(COLOR_B_RED "Bolsista: " COLOR_YELLOW "Verificando os documentos da ficha %d.\n", ficha);
+    printf(COLOR_B_RED "Bolsista: " COLOR_YELLOW "Verificando os documentos da ficha %d.\n", ficha + 1);
 }
 
 // entrega a carteirinha da ficha recebida
 void entregaCarteirinha(int ficha){
     sleep(SLEEP_TIME);
-    printf(COLOR_B_RED "Bolsista: " COLOR_GREEN "Tudo certo com os documentos. Entregando a carteirinha da ficha %d.\n", ficha);
+    printf(COLOR_B_RED "Bolsista: " COLOR_GREEN "Tudo certo com os documentos. Entregando a carteirinha da ficha %d.\n", ficha + 2);
 }
 
 // nova ficha entra no DCE
 void entraFicha(int ficha){
     sleep(SLEEP_TIME);
-    printf(COLOR_B_CYAN "Ficha  %d: " COLOR_BLUE "Entrei. Trouxe meus documentos.\n", ficha);
-    printf(COLOR_B_CYAN "Ficha  %d: " COLOR_BLUE "Vou esperar pela minha carteirinha...\n", ficha);
+    printf(COLOR_B_CYAN "Ficha  %d: " COLOR_BLUE "Entrei. Trouxe meus documentos.\n", ficha + 1);
+    printf(COLOR_B_CYAN "Ficha  %d: " COLOR_BLUE "Vou esperar pela minha carteirinha...\n", ficha + 1);
 }
 
 // aluno recebe carteirinha
 void recebeCarteirinha(int ficha){
     sleep(SLEEP_TIME);
-    printf(COLOR_B_CYAN "Ficha  %d: " COLOR_GREEN "Recebi minha carteirinha!\n", ficha);
+    printf(COLOR_B_CYAN "Ficha  %d: " COLOR_GREEN "Recebi minha carteirinha!\n", ficha + 1);
 }
 
 
