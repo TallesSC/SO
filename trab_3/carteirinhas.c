@@ -57,11 +57,14 @@ void* bolsista (void* arg) {
         saiBolsista(); // Bolsista sai e número de pessoa dentro do DCE zera
         contadorFichas = 0;
 
-        // for (int i = 0; i < numFichas; i++){
-        //     if (arrayContainValue(thread_args[i].id,fichasDentro))  // verifica se não é uma das fichas já liberadas
-        //         continue;
-        //     sem_post(&(thread_args[i].sem_ficha));   // libera próximas fichas para entrarem
-        // }        
+        sem_wait(&sem_mutex);
+        for (int i = 0; i < numFichas; i++){
+            if (arrayContainValue(thread_args[i].id,fichasDentro))  // verifica se não é uma das fichas já liberadas
+                continue;
+            sem_post(&(thread_args[i].sem_ficha));   // libera próximas fichas para entrarem
+        }        
+        sem_post(&sem_mutex);
+        sleep(3);
     }
     
 	return 0;
@@ -75,9 +78,12 @@ void* aluno (void* arg) {
 
     while (true){
         sem_wait(&sem_mutex);  // semáforo para controlar o contador de pessoas dentro
-        if (contadorFichas < LOTACAO_MAX){ // verifica se DCE já não está lotado
+        if (contadorFichas >= LOTACAO_MAX){ // verifica se DCE já não está lotado
+            sem_post(&sem_mutex);
+            sem_wait(&(args->sem_ficha)); //      
+        }else{
             entraFicha(id);                        
-            fichasDentro[contadorFichas] = id;    // adiciona no vetor a ficha que entrou 
+            fichasDentro[contadorFichas] = id;     
             contadorFichas++;                      
             if (contadorFichas < LOTACAO_MAX){
                 sem_post(&sem_mutex); 
@@ -88,9 +94,7 @@ void* aluno (void* arg) {
 
             sem_wait(&(args->sem_ficha));
             recebeCarteirinha(id);
-        }else{
-            sem_post(&sem_mutex);  
-        }
+        }  
     }   
 
 	return 0;

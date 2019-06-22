@@ -20,7 +20,7 @@ void entraBolsista(){
 
 // bolsista termina o trabalho e sai do DCE
 void saiBolsista(){
-    sleep(SLEEP_TIME + 3);
+    sleep(SLEEP_TIME);
     printf(COLOR_B_RED "Bolsista: " COLOR_MAGENTA "Terminei. Fechei a porta. Vou tomar um cafézinho e já volto...\n");
 }
 
